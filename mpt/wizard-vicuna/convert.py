@@ -25,6 +25,9 @@ for item in data:
         full_history += gpt_response_appended
         dataset.append(new_object)
 
-with open('wizard_vicuna_converted.jsonl', 'w') as file:
+with open('wizard_vicuna_mpt.jsonl', 'w') as file:
+    i = 0
     for entry in dataset:
+        i += 1
         file.write(json.dumps(entry) + '\n')
+    print("total values: " + str(i))
